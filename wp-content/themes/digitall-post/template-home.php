@@ -10,18 +10,68 @@ $excludePostIdArray = array();
 
       <?php include_once('_menu.php'); ?>
       
-      <?php
-      if ( have_rows('featured_news_item') ) :
-        the_row(); 
-        if ( get_row_layout() == 'post' ) :
-          echo 'hola';
-          include 'template-parts/home/featured-news-item.php';
-        else :
-          include 'template-parts/home/featured-news-item-custom.php';
-        endif;
-      endif;
+      
 
-      ?>
+      <header class="section_template">
+        <div class="wrapper">
+          <div class="position">
+            <div class="slider">
+
+              <!-- Top Article -->
+              <?php
+              if ( have_rows('featured_news_item') ) :
+                the_row(); 
+                if ( get_row_layout() == 'post' ) :
+                  include 'template-parts/home/featured-news-item.php';
+                else :
+                  include 'template-parts/home/featured-news-item-custom.php';
+                endif;
+              endif;
+
+              ?>
+              
+              <?php 
+              $featuredNews = get_field('acf_featured_news');
+              if ( $featuredNews ) :
+              ?>
+              <!-- Column Articles -->
+              <div class="latest_holder">
+                <ul>
+                  <?php 
+                  foreach ( $featuredNews as $post ) : 
+                    setup_postdata($post);
+                    $itemClass = ( kxn_post_is_video() )?'video_type':'';
+                  ?>
+                  <!-- Item -->
+                  <li>
+                    <!-- Photo -->
+                    <div class="photo_holder <?= $itemClass; ?>">
+                      <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('1045x697', array('alt' => get_the_title() )); ?></a>
+                    </div>
+
+                    <!-- Info -->
+                    <div class="article_info">
+                      <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                      <div class="meta_holder">
+                        <span class="cat_name"><?= kxn_get_the_category_link(); ?></span>
+                        <span class="date"><?php kxn_the_time_diff(); ?></span>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- Item -->
+                  <?php endforeach; ?>
+
+                </ul>
+              </div>
+              <!-- /Column Articles -->
+              <?php 
+                wp_reset_postdata();
+              endif; ?>
+
+            </div>
+          </div>
+        </div>
+      </header>
       
 
 

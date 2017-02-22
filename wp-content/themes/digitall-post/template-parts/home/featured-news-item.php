@@ -5,12 +5,7 @@ if ( $featuredPost ) :
   setup_postdata( $post );
 ?>
 <!-- MAIN ARTICLE -->
-<header>
-  <div class="wrapper">
-    <div class="position">
-      <div class="slider">
 
-        <!-- Top Article -->
         <div class="main_holder">
           <div class="content">
 
@@ -21,6 +16,7 @@ if ( $featuredPost ) :
 
             <!-- Info -->
             <div class="article_info">
+              <h3 class="cat_name">Portada</h3>
               <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 
               <div class="meta_holder">
@@ -32,10 +28,7 @@ if ( $featuredPost ) :
           </div>
         </div>
 
-      </div>
-    </div>
-  </div>
-</header>
+        
 <!-- /MAIN ARTICLE -->
 <?php 
   wp_reset_postdata();

@@ -11,10 +11,6 @@ if ( $featuredImage ) :
   endif;
 ?>
 <!-- MAIN ARTICLE -->
-<header>
-  <div class="wrapper">
-    <div class="position">
-      <div class="slider">
 
         <!-- Top Article -->
         <div class="main_holder">
@@ -27,6 +23,7 @@ if ( $featuredImage ) :
 
             <!-- Info -->
             <div class="article_info">
+              <h3 class="cat_name">Portada</h3>
               <h2><?= $title; ?></h2>
 
               <div class="meta_holder">
@@ -36,9 +33,5 @@ if ( $featuredImage ) :
           </div>
         </div>
 
-      </div>
-    </div>
-  </div>
-</header>
 <!-- /MAIN ARTICLE -->
 <?php endif; ?>

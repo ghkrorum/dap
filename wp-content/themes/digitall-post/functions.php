@@ -41,6 +41,7 @@ function digitall_post_theme_setup() {
     add_image_size( '960x640', 960, 640, true );
     add_image_size( '629x419', 629, 419, true );
     add_image_size( '450x300', 450, 300, true );
+    add_image_size( '351x215', 351, 215, true );
     add_image_size( '300x504', 300, 504, true );
     add_image_size( '300x200', 300, 200, true );
     add_image_size( '296x200', 296, 200, true );
