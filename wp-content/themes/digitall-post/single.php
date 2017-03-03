@@ -1,13 +1,17 @@
 <?php
 get_header();
 the_post();
-  
+$excludePostIdArray = array();
+$excludePostIdArray[] = $post->ID;
+$permalink = get_the_permalink();
+$permalink = parse_url($permalink, PHP_URL_PATH);
 ?>
     <div id="main_container" class="fluid_container">
 
       <?php include_once('_menu.php'); ?>
       
       <!-- MAIN ARTICLE -->
+      <div class="post-wrap" data-post-id="<?= $post->ID?>" data-post-title="<?php the_title(); ?>" data-post-permalink="<?= $permalink; ?>">
       <header>
         <div class="wrapper">
           <div class="position">
@@ -241,18 +245,13 @@ the_post();
         endif;?>
 
         
-        <!-- MORE ARTICLES -->
-        <section id="loadMore_module" class="">
-          <span class="circle_icon"></span>
-
-          <div class="wrapper_container">
-            <!-- Button: More -->
-            <div class="loading_holder">Loading...</div>
-          </div>
-        </div>
-        <!-- /MORE ARTICLES -->
+        
 
       </section>
+
+      </div>
+
+      <?php echo do_shortcode('[ajax_load_more repeater="template_1" post_type="post" post__not_in="' . implode(",", $excludePostIdArray ) . '" posts_per_page="1" scroll="true" container_type="div" scroll_distance="0"]'); ?>
       <!-- /ARTICLE CONTAINER -->
 <?php 
 get_footer(); 

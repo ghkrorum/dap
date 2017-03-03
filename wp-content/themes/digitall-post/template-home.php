@@ -131,6 +131,8 @@ $excludePostIdArray = array();
 
       <?php
       $headlines = get_field('headlines');
+      $moreLink = get_field('section_3_more_link');
+      $moreCaption = get_field('section_3_more_caption');
       if ( $headlines ) : 
       ?>
       <!-- HEADLINERS -->
@@ -177,8 +179,9 @@ $excludePostIdArray = array();
             ?>
 
           </ul>
-
-          <a href="#" class="see_more">Ver M&aacute;s</a>
+          <?php if ( $moreLink ) : ?>
+          <a href="<?= $moreLink; ?>" class="see_more"><?= $moreCaption; ?></a>
+          <?php endif; ?>
         </div>
       </section>
       <!-- /HEADLINERS -->
@@ -194,7 +197,7 @@ $excludePostIdArray = array();
       $moreLink = get_field('section_4_more_link');
       $moreCaption = get_field('section_4_more_caption');
       
-      if ( $entries ) :
+      if ( $posts ) :
       ?>
       <!-- EXPLAINERS -->
       <section id="explainers_module">
@@ -206,13 +209,15 @@ $excludePostIdArray = array();
             foreach  ( $posts as $post ) : 
               $excludePostIdArray[] = $post->ID;
               setup_postdata( $post );
-              $category = kxn_get_post_category( $explainersCategory->term_id );
+              $category = kxn_get_post_category();
             ?>
             <!-- ITEM -->
             <li>
               <div class="article_holder">
                 <!-- Title -->
-                <h3 class="cat_name"><?= esc_html( $explainersCategory->name ); ?></h3>
+                <?php if ( $category ) : ?>
+                <h3 class="cat_name"><?= esc_html( $category->name ); ?></h3>
+                <?php endif; ?>
 
                 <!-- Info -->
                 <div class="info_holder">

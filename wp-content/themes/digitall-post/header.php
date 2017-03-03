@@ -68,10 +68,12 @@
 
       <!-- SEARCH FORM -->
       <div class="search-form">
+        <form action="<?php echo home_url();?>" method="get">
         <fielset>
           <label for="search_txt">Buscar</label>
-          <input type="text" id="search-term-input" name="search_txt" value="" />
+          <input type="text" id="search-term-input" name="s" value="" />
         </fielset>
+        </form>
       </div>
       <!-- /SEARCH FORM -->
 
@@ -80,7 +82,14 @@
       <div class="legales">
         DigitAllPost 2016&copy;<br>
         Todos los derechos reservados<br>
-        <a href="#">Aviso de Privacidad</a>
+        <?php
+        $privacyUrl = get_field('acf_privacy_url', 'option');
+        if ($privacyUrl) :
+        ?>
+        <a href="<?= $privacyUrl; ?>">Aviso de Privacidad</a>
+        <?php 
+        endif; 
+        ?>
       </div>
       <!-- /LEGALES -->
       

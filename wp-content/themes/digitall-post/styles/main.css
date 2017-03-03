@@ -11011,14 +11011,14 @@ a.see_more:after,
           transform: translate(-50%, -50%);
 }
 
-#search_module form {
+#search_module .search-form {
   position: relative;
   text-align: center;
   font-family: "Oswald", sans-serif;
   font-weight: 300;
 }
 
-#search_module form label {
+#search_module .search-form label {
   display: block;
   color: #fff;
   text-transform: uppercase;
@@ -11026,7 +11026,7 @@ a.see_more:after,
   font-size: 1.953em;
 }
 
-#search_module form input[type=text] {
+#search_module .search-form input[type=text] {
   width: 75%;
   border: none;
   padding: .25em .65em;
@@ -11037,7 +11037,7 @@ a.see_more:after,
   font-size: 1.25em;
 }
 
-#search_module form .status {
+#search_module .search-form .status {
   margin-top: .5em;
   color: #e12029;
   text-transform: uppercase;
@@ -13043,6 +13043,20 @@ section.article_module article .content_holder {
   border-bottom: solid 1px #222;
 }
 
+section.article_module article .content_holder .ssbp--state-hidden .ssbp-container{
+  display: block;
+  width: 100%;
+  -ms-transform: none; /* IE 9 */
+  -webkit-transform: none; /* Chrome, Safari, Opera */
+  transform: none;
+}
+section.article_module article .content_holder .ssbp-wrap .ssbp-list{
+  
+}
+section.article_module article .content_holder .ssbp-wrap .ssbp-list li{
+  padding: 0;
+}
+
 section.article_module article .content_holder h1, section.article_module article .content_holder h2, section.article_module article .content_holder h3 {
   font-size: 1.5em;
   margin: 1.5em auto 1em;
@@ -13174,6 +13188,7 @@ section.article_module article ol.socialShare_list {
   border: 0;
   list-style: none;
   position: relative;
+  display: none;
 }
 
 section.article_module article ol.socialShare_list::after {

@@ -1,6 +1,5 @@
 <?
 global $post;
-$permalink = get_the_permalink();
 $permalink = parse_url($permalink, PHP_URL_PATH);
 ?>
 <div class="post-wrap" data-post-id="<?= $post->ID?>" data-post-title="<?php the_title(); ?>" data-post-permalink="<?= $permalink; ?>">
@@ -99,7 +98,7 @@ $permalink = parse_url($permalink, PHP_URL_PATH);
 
       <!-- Content -->
       <div class="content_holder">
-        <?php echo do_shortcode('[ssbp title="'.get_the_title().'" url="'.get_permalink().'"]'); ?>
+        <?php echo do_shortcode('[ssbp]'); ?>
         <?php
         if ( in_category( 'x-plainers' ) ) :
         ?>
@@ -122,7 +121,7 @@ $permalink = parse_url($permalink, PHP_URL_PATH);
         <?php 
         endif;
         ?>
-        <?php echo do_shortcode('[ssbp title="'.get_the_title().'" url="'.get_permalink().'"]'); ?>
+        <?php echo do_shortcode('[ssbp]'); ?>
       </div>
       <!-- /Content -->
 
@@ -132,7 +131,7 @@ $permalink = parse_url($permalink, PHP_URL_PATH);
       if ($tags) :
       ?>
       <div class="tags_holder">
-        Tags: 
+        Tags:&nbsp;
         <ol>
           <?php foreach ( $tags as $tag ) : ?>
           <li><?= $tag; ?></li>

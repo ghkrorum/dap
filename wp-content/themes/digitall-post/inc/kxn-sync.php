@@ -256,7 +256,12 @@ EOT;
 }
 add_filter( 'spectrom_sync_api',  'kxn_sync_api_action_get_categories', 10, 3  );
 
-function kxn_sync_scripts(){
+function kxn_sync_scripts( $hook ){
+
+	if ( 'post.php' != $hook ) {
+        return;
+    }
+	
 	$themeUrl = get_stylesheet_directory_uri();
 	wp_enqueue_script('kxn-sync', get_template_directory_uri().'/js/kxn-sync.js', array('jquery'), '1.0', TRUE);
 }
