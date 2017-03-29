@@ -1,5 +1,6 @@
 <?php
 $sectionCat = get_sub_field('block_item_cat');
+if ( !empty($sectionCat) ) : 
 $termLink = get_category_link( $sectionCat->term_id );
 $sectionCatPosts = get_posts(array(
   'numberposts' => 4,
@@ -44,3 +45,4 @@ $sectionCatPosts = get_posts(array(
 
   </ol>
 </div>
+<?php endif; // if ( !empty($sectionCat) ) :?>

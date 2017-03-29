@@ -11,6 +11,8 @@ function digitall_post_scripts() {
     wp_enqueue_style( 'digitall-post.vendor', THEME_URL . '/styles/vendor.css' );
 		wp_enqueue_style( 'digitall-post.fonts', 'https://fonts.googleapis.com/css?family=Oswald:300,400,700|Roboto:300,300i,400,400i,700,700i,900' );
     wp_enqueue_style( 'digitall-post.main', THEME_URL . '/styles/main.css' );
+
+    wp_enqueue_style( 'digitall-theme-style', THEME_URL . '/css/styles.css' );
 		
 		/* End CSS */
 
@@ -20,9 +22,13 @@ function digitall_post_scripts() {
 
     wp_enqueue_script( 'digitall-post.vendor', THEME_URL . '/scripts/vendor.js', array(), '3.1.1', true);
 
+    wp_enqueue_script( 'fluidvids', THEME_URL . '/lib/fluidvids/fluidvids.min.js', array(), '2.4.1');
+
     wp_enqueue_script( 'digitall-post.main', THEME_URL . '/scripts/main.js', array(), '1.0', true);
 
-    wp_enqueue_script( 'digitall-post.custom', THEME_URL . '/js/digitall.js', array('jquery'), '1.0', false );
+    wp_enqueue_script( 'digitall-post.custom', THEME_URL . '/js/digitall.js', array('jquery'), '1.0', true );
+
+    wp_enqueue_script( 'jquery.dfp', THEME_URL . '/lib/jquery.dfp/jquery.dfp.min.js', array(), '2.4.2');
 
     wp_localize_script( 'digitall-post.custom', 'dpostGlobal', array(
             'ajaxurl' => admin_url( 'admin-ajax.php' )
@@ -108,8 +114,18 @@ function digitall_post_init_sidebars() {
     ) );
 
     register_sidebar( array(
-        'name'          => 'Home Banner',
-        'id'            => 'digitall_home_banner_sidebar',
+        'name'          => 'Home Banner 1',
+        'id'            => 'digitall_home_banner_1',
+        'before_widget' => '',
+        'after_widget'  => '',
+        'before_title'  => '',
+        'after_title'   => '',
+    ) );
+
+
+    register_sidebar( array(
+        'name'          => 'Home Banner 2',
+        'id'            => 'digitall_home_banner_2',
         'before_widget' => '',
         'after_widget'  => '',
         'before_title'  => '',
@@ -117,13 +133,141 @@ function digitall_post_init_sidebars() {
     ) );
 
     register_sidebar( array(
-        'name'          => 'Section banner',
-        'id'            => 'digitall_section_banner_sidebar',
+        'name'          => 'Home Banner 3',
+        'id'            => 'digitall_home_banner_3',
         'before_widget' => '',
         'after_widget'  => '',
         'before_title'  => '',
         'after_title'   => '',
     ) );
+
+    register_sidebar( array(
+        'name'          => 'Home Banner 4',
+        'id'            => 'digitall_home_banner_4',
+        'before_widget' => '',
+        'after_widget'  => '',
+        'before_title'  => '',
+        'after_title'   => '',
+    ) );
+
+    register_sidebar( array(
+        'name'          => 'Home Banner 5',
+        'id'            => 'digitall_home_banner_5',
+        'before_widget' => '',
+        'after_widget'  => '',
+        'before_title'  => '',
+        'after_title'   => '',
+    ) );
+
+    register_sidebar( array(
+        'name'          => 'Home Mobile Banner 1',
+        'id'            => 'digitall_home_mobile_banner_1',
+        'before_widget' => '',
+        'after_widget'  => '',
+        'before_title'  => '',
+        'after_title'   => '',
+    ) );
+
+    register_sidebar( array(
+        'name'          => 'Home Mobile Banner 2',
+        'id'            => 'digitall_home_mobile_banner_2',
+        'before_widget' => '',
+        'after_widget'  => '',
+        'before_title'  => '',
+        'after_title'   => '',
+    ) );
+
+    register_sidebar( array(
+        'name'          => 'Home Mobile Banner 3',
+        'id'            => 'digitall_home_mobile_banner_3',
+        'before_widget' => '',
+        'after_widget'  => '',
+        'before_title'  => '',
+        'after_title'   => '',
+    ) );
+
+    register_sidebar( array(
+        'name'          => 'Section banner 1',
+        'id'            => 'digitall_section_banner_1',
+        'before_widget' => '',
+        'after_widget'  => '',
+        'before_title'  => '',
+        'after_title'   => '',
+    ) );
+
+    register_sidebar( array(
+        'name'          => 'Section banner 2',
+        'id'            => 'digitall_section_banner_2',
+        'before_widget' => '',
+        'after_widget'  => '',
+        'before_title'  => '',
+        'after_title'   => '',
+    ) );
+
+    register_sidebar( array(
+        'name'          => 'Section Mobile banner 1',
+        'id'            => 'digitall_section_mobile_banner_1',
+        'before_widget' => '',
+        'after_widget'  => '',
+        'before_title'  => '',
+        'after_title'   => '',
+    ) );
+
+    register_sidebar( array(
+        'name'          => 'Section Mobile banner 2',
+        'id'            => 'digitall_section_mobile_banner_2',
+        'before_widget' => '',
+        'after_widget'  => '',
+        'before_title'  => '',
+        'after_title'   => '',
+    ) );
+
+    register_sidebar( array(
+        'name'          => 'Post banner top',
+        'id'            => 'digitall_single_top',
+        'before_widget' => '',
+        'after_widget'  => '',
+        'before_title'  => '',
+        'after_title'   => '',
+    ) );
+
+    register_sidebar( array(
+        'name'          => 'Post banner bottom',
+        'id'            => 'digitall_single_bottom',
+        'before_widget' => '',
+        'after_widget'  => '',
+        'before_title'  => '',
+        'after_title'   => '',
+    ) );
+
+    register_sidebar( array(
+        'name'          => 'Post Mobile Banner 1',
+        'id'            => 'digitall_post_mobile_banner_1',
+        'before_widget' => '',
+        'after_widget'  => '',
+        'before_title'  => '',
+        'after_title'   => '',
+    ) );
+
+    register_sidebar( array(
+        'name'          => 'Post Mobile Banner 2',
+        'id'            => 'digitall_post_mobile_banner_2',
+        'before_widget' => '',
+        'after_widget'  => '',
+        'before_title'  => '',
+        'after_title'   => '',
+    ) );
+
+    register_sidebar( array(
+        'name'          => 'Last news banner',
+        'id'            => 'digitall_last_news_banner',
+        'before_widget' => '',
+        'after_widget'  => '',
+        'before_title'  => '',
+        'after_title'   => '',
+    ) );
+
+    
 
 }
 add_action( 'widgets_init', 'digitall_post_init_sidebars' );
@@ -154,6 +298,13 @@ class Digitall_Post_Walker_Main_Nav_Menu extends Walker_Nav_Menu {
   function start_lvl( &$output, $depth = 0, $args = array() ) {
     $indent = str_repeat("\t", $depth);
     $output .= "\n$indent<ul class=\"submenu\">\n";
+  }
+}
+
+class Digitall_Post_Walker_Main_Mobile_Menu extends Walker_Nav_Menu {
+  function start_lvl( &$output, $depth = 0, $args = array() ) {
+    $indent = str_repeat("\t", $depth);
+    $output .= "\n$indent<ul class=\"sub-menu\">\n";
   }
 }
 
@@ -280,6 +431,77 @@ function more_posts() {
   global $wp_query;
   return $wp_query->current_post + 1 < $wp_query->post_count;
 }
+
+
+//Insert ads after second paragraph of single post content.
+
+// add_filter( 'the_content', 'digitall_insert_post_ads' );
+
+function digitall_insert_post_ads( $content ) {
+    
+    $ad_code = '<div class="banner_holder banner-mobile"> <div id="div-gpt-ad-1489939940283-9" style="height:250px; width:300px;"><script>googletag.cmd.push(function() { googletag.display("div-gpt-ad-1489939940283-9"); });</script></div></div>';
+
+    if ( is_single() && ! is_admin() ) {
+        return digitall_insert_after_paragraph( $ad_code, 2, $content );
+    }
+    
+    return $content;
+}
+ 
+// Parent Function that makes the magic happen
+ 
+function digitall_insert_after_paragraph( $insertion, $paragraph_id, $content ) {
+    $closing_p = '</p>';
+    $paragraphs = explode( $closing_p, $content );
+    foreach ($paragraphs as $index => $paragraph) {
+
+        if ( trim( $paragraph ) ) {
+            $paragraphs[$index] .= $closing_p;
+        }
+
+        if ( $paragraph_id == $index + 1 ) {
+            $paragraphs[$index] .= $insertion;
+        }
+    }
+    
+    return implode( '', $paragraphs );
+}
+
+function rel_shortcode( $atts, $content = null ) {
+    return '<div class="rel-txt">' . $content . '</div>';
+}
+add_shortcode( 'rel', 'rel_shortcode' );
+
+function excerpt_shortcode( $atts, $content = null ) {
+    return '<div class="excerpt">' . $content . '</div>';
+}
+add_shortcode( 'excerpt', 'excerpt_shortcode' );
+
+function dfpScript() {
+?>
+<script type="text/javascript">
+    jQuery('.adunit').dfp({
+        dfpID: '158800740',
+        sizeMapping: {
+            'desktop': [
+                {browser: [1024, 0], ad_sizes: [[970, 250], [728, 90]]},
+                {browser: [   0,   0], ad_sizes: []}
+            ],
+            'sidebar': [
+                {browser: [1024, 0], ad_sizes: [[300, 600], [300, 250]]},
+                {browser: [   0,   0], ad_sizes: []}
+            ],
+            'mobile': [
+                {browser: [1024, 0], ad_sizes: []},
+                {browser: [   0,   0], ad_sizes: [[300, 250], [300, 50]]}
+            ]
+        }
+    });
+
+</script>
+<?php
+}
+add_action( 'wp_footer', 'dfpScript' );
 
 if( function_exists('acf_add_options_page') ) {
     

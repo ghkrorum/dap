@@ -1,5 +1,6 @@
 <?
 global $post;
+$permalink = get_the_permalink();
 $permalink = parse_url($permalink, PHP_URL_PATH);
 ?>
 <div class="post-wrap" data-post-id="<?= $post->ID?>" data-post-title="<?php the_title(); ?>" data-post-permalink="<?= $permalink; ?>">
@@ -87,18 +88,11 @@ $permalink = parse_url($permalink, PHP_URL_PATH);
       endif; ?>
 
 
-      <!-- Social Share -->
-      <ol class="socialShare_list">
-        <li><a href="#" class="fa fa-facebook"><span>Facebook</span></a></li>
-        <li><a href="#" class="fa fa-twitter"><span>Twitter</span></a></li>
-        <li><a href="#" class="fa fa-whatsapp"><span>Whatsapp</span></a></li>
-        <li><a href="#" class="fa fa-envelope"><span>Mail</span></a></li>
-      </ol>
-      <!-- /Social Share -->
+      
 
       <!-- Content -->
       <div class="content_holder">
-        <?php echo do_shortcode('[ssbp]'); ?>
+        <?php echo do_shortcode('[ssbp title="'.get_the_title().'" url="'.get_permalink().'"]'); ?>
         <?php
         if ( in_category( 'x-plainers' ) ) :
         ?>
@@ -121,7 +115,7 @@ $permalink = parse_url($permalink, PHP_URL_PATH);
         <?php 
         endif;
         ?>
-        <?php echo do_shortcode('[ssbp]'); ?>
+        <?php echo do_shortcode('[ssbp title="'.get_the_title().'" url="'.get_permalink().'"]'); ?>
       </div>
       <!-- /Content -->
 
@@ -131,7 +125,7 @@ $permalink = parse_url($permalink, PHP_URL_PATH);
       if ($tags) :
       ?>
       <div class="tags_holder">
-        Tags:&nbsp;
+        Tags: 
         <ol>
           <?php foreach ( $tags as $tag ) : ?>
           <li><?= $tag; ?></li>
@@ -155,14 +149,7 @@ $permalink = parse_url($permalink, PHP_URL_PATH);
       <?php endif; ?>
 
 
-      <!-- Social Share -->
-      <ol class="socialShare_list">
-        <li><a href="#" class="fa fa-facebook"><span>Facebook</span></a></li>
-        <li><a href="#" class="fa fa-twitter"><span>Twitter</span></a></li>
-        <li><a href="#" class="fa fa-whatsapp"><span>Whatsapp</span></a></li>
-        <li><a href="#" class="fa fa-envelope"><span>Mail</span></a></li>
-      </ol>
-      <!-- /Social Share -->
+      
     </article>
     <!-- /ARTICLE -->
   </div>

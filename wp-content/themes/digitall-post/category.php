@@ -38,6 +38,12 @@ $currentCategory = get_category(get_query_var('cat'));
             </div>
             <!-- /Top Article -->
 
+            <?php if ( is_active_sidebar( 'digitall_section_mobile_banner_1' ) ) : ?>
+              <div class="banner_holder banner-mobile"> 
+                <?php dynamic_sidebar( 'digitall_section_mobile_banner_1' ); ?>
+              </div>
+            <?php endif; ?>
+
             <?php 
             if ( more_posts() ) :
             ?>
@@ -88,13 +94,19 @@ $currentCategory = get_category(get_query_var('cat'));
       <!-- /NEWS -->
 
 
-
+      <?php if ( is_active_sidebar( 'digitall_section_mobile_banner_2' ) ) : ?>
+        <div class="banner_holder banner-mobile"> 
+          <?php dynamic_sidebar( 'digitall_section_mobile_banner_2' ); ?>
+        </div>
+      <?php endif; ?>
 
       
-      <?php if ( is_active_sidebar( 'digitall_section_banner_sidebar' ) ) : ?>
-        <div class="banner_holder"> 
-          <?php dynamic_sidebar( 'digitall_section_banner_sidebar' ); ?>
+      <?php if ( is_active_sidebar( 'digitall_section_banner_1' ) ) : ?>
+      <div class="wrapper_container">
+        <div class="banner_holder banner-desktop"> 
+          <?php dynamic_sidebar( 'digitall_section_banner_1' ); ?>
         </div>
+      </div>
       <?php endif; ?>
 
 
@@ -118,6 +130,13 @@ $currentCategory = get_category(get_query_var('cat'));
             <?php endfor; ?>
 
           </ol>
+
+          <?php if ( is_active_sidebar( 'digitall_section_banner_2' ) ) : ?>
+            <div class="banner_holder banner-desktop"> 
+              <?php dynamic_sidebar( 'digitall_section_banner_2' ); ?>
+            </div>
+          <?php endif; ?>
+
           <?php echo do_shortcode('[ajax_load_more container_type="ol" css_classes="latest_list" post_type="post" category="'.$currentCategory->slug.'" post__not_in="' . implode(",", $excludePostIdArray ) . '" posts_per_page="8" button_label = "Ver más" button_loading_label="Cargando más noticias" scroll="true"]'); ?>
         </div>
       </section>

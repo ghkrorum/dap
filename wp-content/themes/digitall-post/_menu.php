@@ -33,7 +33,7 @@
             
             
             <!-- Newsletter -->
-            <a href="#" class="newsletter">Inscr&iacute;bete a nuestro <span>newsletter</span></a>
+            <a href="#" class="newsletter" id="newsletter_btn">Inscr&iacute;bete a nuestro <span>newsletter</span></a>
             <!-- /Newsletter -->
 
 
@@ -51,13 +51,12 @@
               <a href="#"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
             </div>
             <!-- /MENU ICON -->
-
-
-            <!-- LOGO -->
             <div class="logo">
               <a href="<?php echo home_url();?>">Digitall Post</a>
             </div>
-            <!-- /LOGO -->
+
+            <a class="searchWindowOpen_btn">Buscar</a>
+            
 
             <?php wp_nav_menu( array( 
               'theme_location' => 'digitall_post_menu',

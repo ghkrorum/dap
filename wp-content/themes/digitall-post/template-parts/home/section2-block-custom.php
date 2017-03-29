@@ -30,7 +30,6 @@ $target = ($newWindow)?'_blank':'_self';
         <div class="photo_holder">
           <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('629x419', array('alt' => get_the_title() )); ?></a>
         </div>
-
         <!-- Info -->
         <div class="info_holder">
           <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
@@ -39,6 +38,7 @@ $target = ($newWindow)?'_blank':'_self';
             <span class="date"><?php kxn_the_time_diff(); ?></span>
           </div>
         </div>
+        <a href="<?php the_permalink(); ?>"  class="vid-link"><span></span></a>
       </li>
       <!-- /Item -->
       <?php 

@@ -29,6 +29,14 @@ $excludePostIdArray = array();
               endif;
 
               ?>
+
+              <?php if ( is_active_sidebar( 'digitall_home_mobile_banner_1' ) ) : ?>
+              <div class="wrapper_container banner-mobile">
+                <div class="banner_holder"> 
+                  <?php dynamic_sidebar( 'digitall_home_mobile_banner_1' ); ?>
+                </div>
+              </div>
+              <?php endif; ?>
               
               <?php 
               $featuredNews = get_field('acf_featured_news');
@@ -73,18 +81,33 @@ $excludePostIdArray = array();
         </div>
       </header>
       
-
+      <?php if ( is_active_sidebar( 'digitall_home_mobile_banner_2' ) ) : ?>
+      <div class="wrapper_container banner-mobile">
+        <div class="banner_holder"> 
+          <?php dynamic_sidebar( 'digitall_home_mobile_banner_2' ); ?>
+        </div>
+      </div>
+      <?php endif; ?>
 
       <!-- NEWS -->
       <?php include('_last-news.php'); ?>
       <!-- /NEWS -->
 
+      <?php if ( is_active_sidebar( 'digitall_home_mobile_banner_3' ) ) : ?>
+      <div class="wrapper_container banner-mobile">
+        <div class="banner_holder"> 
+          <?php dynamic_sidebar( 'digitall_home_mobile_banner_3' ); ?>
+        </div>
+      </div>
+      <?php endif; ?>
       
 
-      <?php if ( is_active_sidebar( 'digitall_home_banner_sidebar' ) ) : ?>
+      <?php if ( is_active_sidebar( 'digitall_home_banner_1' ) ) : ?>
+      <div class="wrapper_container banner-desktop">
         <div class="banner_holder"> 
-          <?php dynamic_sidebar( 'digitall_home_banner_sidebar' ); ?>
+          <?php dynamic_sidebar( 'digitall_home_banner_1' ); ?>
         </div>
+      </div>
       <?php endif; ?>
       
 
@@ -113,7 +136,13 @@ $excludePostIdArray = array();
       <!-- /CATEGORY LATEST -->
       <?php endif; ?>
 
-
+      <?php if ( is_active_sidebar( 'digitall_home_banner_2' ) ) : ?>
+      <div class="wrapper_container banner-desktop">
+        <div class="banner_holder"> 
+          <?php dynamic_sidebar( 'digitall_home_banner_2' ); ?>
+        </div>
+      </div>
+      <?php endif; ?>
 
       <?php 
       if ( have_rows('section_2_block') ) :
@@ -127,6 +156,14 @@ $excludePostIdArray = array();
         endwhile;
       endif;
       ?>
+
+      <?php if ( is_active_sidebar( 'digitall_home_banner_3' ) ) : ?>
+      <div class="wrapper_container banner-desktop">
+        <div class="banner_holder"> 
+          <?php dynamic_sidebar( 'digitall_home_banner_3' ); ?>
+        </div>
+      </div>
+      <?php endif; ?>
 
 
       <?php
@@ -160,7 +197,6 @@ $excludePostIdArray = array();
                 <!-- Info -->
                 <div class="info_holder">
                   <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-                  <?php the_excerpt(); ?>
                   <?php if ($category): ?>
                   <span class="cat_name"><a href="<?= esc_url( get_category_link( $category->term_id ) ); ?>"><?= esc_html( $category->name ); ?></a></span>
                   <?php endif; ?>
@@ -190,7 +226,13 @@ $excludePostIdArray = array();
       endif;
       ?>
 
-
+      <?php if ( is_active_sidebar( 'digitall_home_banner_4' ) ) : ?>
+      <div class="wrapper_container banner-desktop">
+        <div class="banner_holder"> 
+          <?php dynamic_sidebar( 'digitall_home_banner_4' ); ?>
+        </div>
+      </div>
+      <?php endif; ?>
 
       <?php
       $posts = get_field('section_4_entries');
@@ -248,6 +290,14 @@ $excludePostIdArray = array();
       <?php 
       endif;
       ?>
+
+      <?php if ( is_active_sidebar( 'digitall_home_banner_5' ) ) : ?>
+      <div class="wrapper_container banner-desktop">
+        <div class="banner_holder"> 
+          <?php dynamic_sidebar( 'digitall_home_banner_5' ); ?>
+        </div>
+      </div>
+      <?php endif; ?>
       
       <?php 
       $posts = get_field('section_5_entries');
@@ -309,7 +359,7 @@ $excludePostIdArray = array();
         <span class="circle_icon"></span>
 
         <div class="wrapper_container">
-          <?php echo do_shortcode('[ajax_load_more container_type="ol" css_classes="latest_list" post_type="post" post__not_in="' . implode(",", $excludePostIdArray ) . '" posts_per_page="8" button_label = "Ver más" button_loading_label="Cargando más noticias" scroll="true"]'); ?>
+          <?php echo do_shortcode('[ajax_load_more container_type="ol" css_classes="latest_list" post_type="post" post__not_in="' . implode(",", $excludePostIdArray ) . '" posts_per_page="8" button_label = "Ver más" button_loading_label="Cargando más noticias" scroll="true" scroll_distance="0"]'); ?>
           <ol class="latest_list">
 
             <!-- Ejemplo

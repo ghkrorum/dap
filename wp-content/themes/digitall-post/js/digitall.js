@@ -7,10 +7,22 @@ var main; // Declare main variable in global scope
 
 		this.search = null;
 		this.post = null;
+		this.newsletter_open = false;
+		this.lastScrollTop = 0;
+		this.onScrollDown = new Array();
+		this.onScrollUp = new Array();
+		this.scrollUpCount = 0;
+		this.scrollDownCount = 0;
+		this.canScrollFlag = true;
 
 
 		this.init = function(){
             $(document).ready(This.onDocumentReady);
+
+			This.onScrollUp[This.scrollUpCount++] = This.scrollLastNews;
+			This.onScrollDown[This.scrollDownCount++] = This.scrollLastNews;
+
+			setInterval(This.scrollMonitor, 10);
         };
 
         this.onDocumentReady = function(){
@@ -21,7 +33,81 @@ var main; // Declare main variable in global scope
         		This.post = new Post();
         	}
 			
+			$('#newsletter_btn').click(function(e){
+        		e.preventDefault();
+        		This.toggleNewsletterhWindow(!This.newsletter_open);
+        	});
+
+        	$('#newsletter_module .overlay').click(function (_e) {
+				_e.preventDefault();
+				This.toggleNewsletterhWindow(false);
+			});
+			
         };
+
+        this.toggleNewsletterhWindow = function(_target) {
+			This.newsletter_open = _target;
+			$('#newsletter_module').toggleClass('visible', This.newsletter_open);
+		};
+
+		this.scrollLastNews = function(st,forward){
+
+		    if ( $('.last_news_banner').length && $(".mCSB_container").length ){
+
+		    	var contTop = $(".mCSB_container").position().top;
+
+		    	yPos = This.getBannerYPosition();
+
+		    	var bannerRelTop = yPos + contTop;
+
+		    	if ( bannerRelTop > 0 && This.canScrollFlag && st < yPos ){
+		    		$('#news_module .news_holder').mCustomScrollbar("scrollTo",st);
+		    	}else if( This.canScrollFlag ){
+		    		This.canScrollFlag = false;
+		    		$('#news_module .news_holder').mCustomScrollbar("scrollTo",yPos);
+		    	}
+		    }
+		};
+
+		this.getBannerYPosition = function(){
+			var yPos = 0;
+			$('.news_holder li').each(function(index){
+		    		
+	    		if ( $(this).hasClass('last_news_banner') )
+	    			return false;
+
+	    		var h = $(this).outerHeight(true);
+	    		
+	    		yPos += h;
+
+	    	});
+	    	return yPos;
+		};
+
+		this.scrollMonitor = function(){
+			
+				var st = $(window).scrollTop();
+				var forward = false;
+
+				if (st > This.lastScrollTop){
+			    	forward = true; 
+			    	for (var x in This.onScrollDown){
+			       		if (typeof This.onScrollDown[x] == 'function'){
+			       			This.onScrollDown[x](st,forward);
+			       		}
+			       	}
+			   	}else if (st < This.lastScrollTop){
+			   		for (var x in This.onScrollUp){
+			       		if (typeof This.onScrollUp[x] == 'function'){
+			       			This.onScrollUp[x](st,forward);
+			       		}
+			       	}
+			   	}
+
+			   This.lastScrollTop = st;
+			
+
+		};
 
         this.init();
 	}
@@ -125,6 +211,11 @@ var main; // Declare main variable in global scope
 
 			setInterval(This.scrollMonitor, 10);
 
+			fluidvids.init({
+			  selector: ['iframe', 'object'],
+			  players: ['www.youtube.com', 'player.vimeo.com']
+			});
+
 			
 		};
 
@@ -174,10 +265,21 @@ var main; // Declare main variable in global scope
 			
 			if ( state.postID != This.currentState.postID ){
 				This.currentState = state;
-				console.log(state);
 				history.pushState(state, state.title, state.permalink);
+				This.trackPageview();
 			}
 			
+		};
+
+		this.trackPageview = function(){
+			var location = window.location.href,
+                path = '/' + window.location.pathname;
+            if (typeof ga !== 'undefined' && $.isFunction(ga)) {
+                ga('send', 'pageview', path);
+            }
+            if (typeof __gaTracker !== 'undefined' && $.isFunction(__gaTracker)) {
+                __gaTracker('send', 'pageview', path);
+            }
 		};
 
 		this.scrollMonitor = function(){

@@ -48,7 +48,11 @@ $permalink = parse_url($permalink, PHP_URL_PATH);
       </header>
       <!-- /MAIN ARTICLE -->
 
-
+      <?php if ( is_active_sidebar( 'digitall_post_mobile_banner_1' ) ) : ?>
+        <div class="banner_holder banner-mobile"> 
+          <?php dynamic_sidebar( 'digitall_post_mobile_banner_1' ); ?>
+        </div>
+      <?php endif; ?>
       
 
 
@@ -63,6 +67,12 @@ $permalink = parse_url($permalink, PHP_URL_PATH);
         <span class="circle_icon"></span>
 
         <div class="wrapper_container">
+
+          <?php if ( is_active_sidebar( 'digitall_single_top' ) ) : ?>
+            <div class="banner_holder banner-desktop"> 
+              <?php dynamic_sidebar( 'digitall_single_top' ); ?>
+            </div>
+          <?php endif; ?>
 
           <!-- ARTICLE -->
           <article>
@@ -109,14 +119,7 @@ $permalink = parse_url($permalink, PHP_URL_PATH);
             endif; ?>
 
 
-            <!-- Social Share -->
-            <ol class="socialShare_list">
-              <li><a href="#" class="fa fa-facebook"><span>Facebook</span></a></li>
-              <li><a href="#" class="fa fa-twitter"><span>Twitter</span></a></li>
-              <li><a href="#" class="fa fa-whatsapp"><span>Whatsapp</span></a></li>
-              <li><a href="#" class="fa fa-envelope"><span>Mail</span></a></li>
-            </ol>
-            <!-- /Social Share -->
+            
 
             <!-- Content -->
             <div class="content_holder">
@@ -175,19 +178,14 @@ $permalink = parse_url($permalink, PHP_URL_PATH);
             <!-- /Author -->
             <?php endif; ?>
 
-        
-            <!-- Social Share -->
-            <ol class="socialShare_list">
-              <li><a href="#" class="fa fa-facebook"><span>Facebook</span></a></li>
-              <li><a href="#" class="fa fa-twitter"><span>Twitter</span></a></li>
-              <li><a href="#" class="fa fa-whatsapp"><span>Whatsapp</span></a></li>
-              <li><a href="#" class="fa fa-envelope"><span>Mail</span></a></li>
-            </ol>
-            <!-- /Social Share -->
           </article>
           <!-- /ARTICLE -->
           
-
+          <?php if ( is_active_sidebar( 'digitall_post_mobile_banner_2' ) ) : ?>
+            <div class="banner_holder banner-mobile"> 
+              <?php dynamic_sidebar( 'digitall_post_mobile_banner_2' ); ?>
+            </div>
+          <?php endif; ?>
 
           <!-- ASIDE -->
           <aside>
@@ -201,6 +199,12 @@ $permalink = parse_url($permalink, PHP_URL_PATH);
             
           </aside>
           <!-- /ASIDE -->
+
+          <?php if ( is_active_sidebar( 'digitall_single_bottom' ) ) : ?>
+            <div class="banner_holder banner-desktop banner-single-desk-btm"> 
+              <?php dynamic_sidebar( 'digitall_single_bottom' ); ?>
+            </div>
+          <?php endif; ?>
         </div>
 
 

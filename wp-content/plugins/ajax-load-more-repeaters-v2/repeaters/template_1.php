@@ -88,14 +88,7 @@ $permalink = parse_url($permalink, PHP_URL_PATH);
       endif; ?>
 
 
-      <!-- Social Share -->
-      <ol class="socialShare_list">
-        <li><a href="#" class="fa fa-facebook"><span>Facebook</span></a></li>
-        <li><a href="#" class="fa fa-twitter"><span>Twitter</span></a></li>
-        <li><a href="#" class="fa fa-whatsapp"><span>Whatsapp</span></a></li>
-        <li><a href="#" class="fa fa-envelope"><span>Mail</span></a></li>
-      </ol>
-      <!-- /Social Share -->
+      
 
       <!-- Content -->
       <div class="content_holder">
@@ -156,14 +149,7 @@ $permalink = parse_url($permalink, PHP_URL_PATH);
       <?php endif; ?>
 
 
-      <!-- Social Share -->
-      <ol class="socialShare_list">
-        <li><a href="#" class="fa fa-facebook"><span>Facebook</span></a></li>
-        <li><a href="#" class="fa fa-twitter"><span>Twitter</span></a></li>
-        <li><a href="#" class="fa fa-whatsapp"><span>Whatsapp</span></a></li>
-        <li><a href="#" class="fa fa-envelope"><span>Mail</span></a></li>
-      </ol>
-      <!-- /Social Share -->
+      
     </article>
     <!-- /ARTICLE -->
   </div>

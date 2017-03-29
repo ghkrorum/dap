@@ -10,6 +10,8 @@
         <?php bloginfo('name'); ?>
     </title>
     <?php wp_head(); ?>
+    
+    
   </head>
   <body>
 
@@ -20,7 +22,8 @@
       <?php wp_nav_menu( array( 
               'theme_location' => 'digitall_post_mobile_menu',
         'container' => '',
-        'menu_class' => 'menu'
+        'menu_class' => 'menu',
+        'walker' => new Digitall_Post_Walker_Main_Mobile_Menu()
       )); ?>
 
       <?php wp_nav_menu( array( 
@@ -86,10 +89,12 @@
         $privacyUrl = get_field('acf_privacy_url', 'option');
         if ($privacyUrl) :
         ?>
-        <a href="<?= $privacyUrl; ?>">Aviso de Privacidad</a>
+        <a href="<?= $privacyUrl; ?>">Términos y condiciones</a>
         <?php 
         endif; 
         ?>
+        <br>
+        <a href="#">Contacto</a>
       </div>
       <!-- /LEGALES -->
       
@@ -114,6 +119,27 @@
           <div class="status">
             Escribe al menos 3 letras para buscar.
           </div>
+        </div>
+        <!-- /SEARCH FORM -->
+
+        
+        <!-- NEWS -->
+        <ol id="search-results">
+        </ol>
+        <!-- /NEWS -->
+      </div>
+    </div>
+    <!-- /SEARCH LIGHTBOX -->
+
+    <!-- NEWSLETTER LIGHTBOX -->
+    <div id="newsletter_module" class="modal_module">
+      <!-- OVERLAY -->
+      <div class="overlay"></div>
+
+      <div class="content_holder">
+        <!-- SEARCH FORM -->
+        <div class="search-form" >
+          <?php echo do_shortcode( '[contact-form-7 id="174666" title="Newsletter"]' ); ?>
         </div>
         <!-- /SEARCH FORM -->
 

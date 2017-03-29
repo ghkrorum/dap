@@ -48,6 +48,12 @@ $excludePostIdArray = array();
             </div>
             <!-- /Top Article -->
 
+            <?php if ( is_active_sidebar( 'digitall_section_mobile_banner_1' ) ) : ?>
+              <div class="banner_holder banner-mobile"> 
+                <?php dynamic_sidebar( 'digitall_section_mobile_banner_1' ); ?>
+              </div>
+            <?php endif; ?>
+
             <?php
             if ( $totalNews > 1 ) :
             ?>
@@ -99,12 +105,19 @@ $excludePostIdArray = array();
       <!-- NEWS -->
       <?php include '_last-news.php';?>
       <!-- /NEWS -->
-
       
-      <?php if ( is_active_sidebar( 'digitall_section_banner_sidebar' ) ) : ?>
-        <div class="banner_holder"> 
-          <?php dynamic_sidebar( 'digitall_section_banner_sidebar' ); ?>
+      <?php if ( is_active_sidebar( 'digitall_section_mobile_banner_2' ) ) : ?>
+        <div class="banner_holder banner-mobile"> 
+          <?php dynamic_sidebar( 'digitall_section_mobile_banner_2' ); ?>
         </div>
+      <?php endif; ?>
+      
+      <?php if ( is_active_sidebar( 'digitall_section_banner_1' ) ) : ?>
+      <div class="wrapper_container">
+        <div class="banner_holder banner-desktop"> 
+          <?php dynamic_sidebar( 'digitall_section_banner_1' ); ?>
+        </div>
+      </div>
       <?php endif; ?>
 
 
@@ -195,6 +208,12 @@ $excludePostIdArray = array();
         </div>
       </section>
       <!-- /FEATURED VIDEO -->
+      <?php endif; ?>
+
+      <?php if ( is_active_sidebar( 'digitall_section_banner_2' ) ) : ?>
+        <div class="banner_holder banner-desktop"> 
+          <?php dynamic_sidebar( 'digitall_section_banner_2' ); ?>
+        </div>
       <?php endif; ?>
 
       <?php

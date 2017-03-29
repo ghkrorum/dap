@@ -41,6 +41,7 @@ if ( $sectionCat ) :
             <span class="date"><?php kxn_the_time_diff(); ?></span>
           </div>
         </div>
+        <a href="<?php the_permalink(); ?>" class="vid-link"><span></span></a>
       </li>
       <!-- /Item -->
       <?php 
