@@ -10,9 +10,11 @@ if ( $featuredPost ) :
           <div class="content">
 
             <!-- Photo-->
+            <a href="<?php the_permalink(); ?>">
             <div class="photo_holder">
               <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('1045x697', array('alt' => get_the_title() )); ?></a>
             </div>
+            </a>
 
             <!-- Info -->
             <div class="article_info">

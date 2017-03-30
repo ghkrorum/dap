@@ -17,9 +17,11 @@ if ( $featuredImage ) :
           <div class="content">
 
             <!-- Photo-->
+            <a href="<?php echo $link; ?>">
             <div class="photo_holder">
               <?= $image; ?>
             </div>
+            </a>
 
             <!-- Info -->
             <div class="article_info">

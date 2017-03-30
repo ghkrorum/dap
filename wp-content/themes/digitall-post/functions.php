@@ -512,3 +512,10 @@ if( function_exists('acf_add_options_page') ) {
 }
 
 require get_parent_theme_file_path( '/inc/kxn-sync.php' );
+
+
+
+    
+    
+
+

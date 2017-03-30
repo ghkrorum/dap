@@ -171,6 +171,13 @@ section.article_module aside .textwidget{
 .mc4wp-checkbox{
 	display: none;
 }
+#news_module{
+  z-index: 7;
+}
+#news_module .news_holder{
+  padding-top: 0;
+  margin: 9em auto 0 auto;
+}
 #newsletter_module input[type=submit]{
 	background: #e12029;
 	border: none;
@@ -310,6 +317,7 @@ section.article_module article .content_holder img.aligncenter { display: block;
 section.article_module article .content_holder .alignright { float: right; }
 section.article_module article .content_holder .alignleft { float: left; }
 section.article_module article .content_holder .aligncenter { display: block; margin-left: auto; margin-right: auto; }
+
 /*header .main_holder h2{
   color: #222222;
 }*/
