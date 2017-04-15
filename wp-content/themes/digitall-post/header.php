@@ -11,6 +11,9 @@
     </title>
     <?php wp_head(); ?>
     
+    <?php if ( displayInBoardTag() ) : ?>
+        <script src="//a.teads.tv/page/66966/tag" async="true"></script>
+    <?php endif; ?>
     
   </head>
   <body>

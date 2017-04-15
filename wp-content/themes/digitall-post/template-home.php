@@ -359,7 +359,7 @@ $excludePostIdArray = array();
         <span class="circle_icon"></span>
 
         <div class="wrapper_container">
-          <?php echo do_shortcode('[ajax_load_more container_type="ol" css_classes="latest_list" post_type="post" post__not_in="' . implode(",", $excludePostIdArray ) . '" posts_per_page="8" button_label = "Ver más" button_loading_label="Cargando más noticias" scroll="true" scroll_distance="0"]'); ?>
+          <?php echo do_shortcode('[ajax_load_more container_type="ol" css_classes="latest_list" post_type="post" post__not_in="' . implode(",", $excludePostIdArray ) . '" posts_per_page="8" button_label = "Ver más" images_loaded="true" button_loading_label="Cargando más noticias" scroll="true" scroll_distance="0"]'); ?>
           <ol class="latest_list">
 
             <!-- Ejemplo

@@ -20,5 +20,8 @@
 
     <?php wp_footer(); ?>
     
+    <?php if ( displayInReadTag() ) : ?>
+        <script src="//a.teads.tv/page/66965/tag" async="true"></script>
+    <?php endif; ?>
   </body>
 </html>

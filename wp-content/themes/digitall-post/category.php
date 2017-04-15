@@ -137,7 +137,7 @@ $currentCategory = get_category(get_query_var('cat'));
             </div>
           <?php endif; ?>
 
-          <?php echo do_shortcode('[ajax_load_more container_type="ol" css_classes="latest_list" post_type="post" category="'.$currentCategory->slug.'" post__not_in="' . implode(",", $excludePostIdArray ) . '" posts_per_page="8" button_label = "Ver más" button_loading_label="Cargando más noticias" scroll="true"]'); ?>
+          <?php echo do_shortcode('[ajax_load_more container_type="ol" css_classes="latest_list" post_type="post" category="'.$currentCategory->slug.'" post__not_in="' . implode(",", $excludePostIdArray ) . '" posts_per_page="8" images_loaded="true" button_label = "Ver más" button_loading_label="Cargando más noticias" scroll="true"]'); ?>
         </div>
       </section>
       <!-- /LATEST -->

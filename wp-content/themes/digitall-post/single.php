@@ -255,7 +255,7 @@ $permalink = parse_url($permalink, PHP_URL_PATH);
 
       </div>
 
-      <?php echo do_shortcode('[ajax_load_more repeater="template_1" post_type="post" post__not_in="' . implode(",", $excludePostIdArray ) . '" posts_per_page="1" scroll="true" container_type="div" scroll_distance="0"]'); ?>
+      <?php echo do_shortcode('[ajax_load_more repeater="template_1" post_type="post" post__not_in="' . implode(",", $excludePostIdArray ) . '" posts_per_page="1" scroll="true" images_loaded="true" container_type="div" scroll_distance="0"]'); ?>
       <!-- /ARTICLE CONTAINER -->
 <?php 
 get_footer(); 

@@ -477,6 +477,22 @@ function excerpt_shortcode( $atts, $content = null ) {
 }
 add_shortcode( 'excerpt', 'excerpt_shortcode' );
 
+function displayInReadTag(){
+
+    if ( is_single() || ( is_page() && ( !is_page_template('template-contact.php') && !is_page_template('template-explainer.php') && !is_page_template('template-section.php') && !is_page_template('template-home.php') ) ) ){
+        return true;
+    }
+    return false;
+}
+
+function displayInBoardTag(){
+
+    if ( is_category() || is_front_page() || ( is_page() && is_page_template('template-section.php') ) ){
+        return true;
+    }
+    return false;
+}
+
 function dfpScript() {
 ?>
 <script type="text/javascript">
