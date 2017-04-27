@@ -211,12 +211,20 @@ var main; // Declare main variable in global scope
 
 			setInterval(This.scrollMonitor, 10);
 
+			This.initFluidVids();
+
+			$.fn.almComplete = function(alm){
+				This.initFluidVids();
+			};
+
+			
+		};
+
+		this.initFluidVids = function(){
 			fluidvids.init({
 			  selector: ['iframe', 'object'],
 			  players: ['www.youtube.com', 'player.vimeo.com']
 			});
-
-			
 		};
 
 		this.initCurrentState = function(){

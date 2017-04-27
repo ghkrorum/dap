@@ -49,7 +49,7 @@ $permalink = parse_url($permalink, PHP_URL_PATH);
       <!-- /MAIN ARTICLE -->
 
       <?php if ( is_active_sidebar( 'digitall_post_mobile_banner_1' ) ) : ?>
-        <div class="banner_holder banner-mobile"> 
+        <div class="banner_holder banner-mobile banner-mobile-single-1"> 
           <?php dynamic_sidebar( 'digitall_post_mobile_banner_1' ); ?>
         </div>
       <?php endif; ?>

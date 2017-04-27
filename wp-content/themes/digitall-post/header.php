@@ -17,7 +17,9 @@
     
   </head>
   <body>
-
+    <?php if ( wp_is_mobile() ) : ?>
+    <div class="adunit" id="dap_home_out-of-page_mobi" data-outofpage="true"></div>
+    <?php endif; ?>
     <!-- MOBILE MENU -->
     <div id="mobile_menu">
 
