@@ -21,9 +21,39 @@ var main; // Declare main variable in global scope
 
 			This.onScrollUp[This.scrollUpCount++] = This.scrollLastNews;
 			This.onScrollDown[This.scrollDownCount++] = This.scrollLastNews;
+			This.evalAsyncLoad();
 
 			setInterval(This.scrollMonitor, 10);
         };
+
+        this.evalAsyncLoad = function(){
+        	
+        	var $items = $('.async-load');
+
+        	if ( $items.length ){
+        		$($items).each(function(){
+        			var src = $(this).data('src');
+        			var type = $(this).data('type');
+        			This.loadjscssfile(src, type);
+        		});
+        	}
+        };
+
+        this.loadjscssfile = function(filename, filetype){
+		    if (filetype=="js"){ //if filename is a external JavaScript file
+		        var fileref=document.createElement('script')
+		        fileref.setAttribute("type","text/javascript")
+		        fileref.setAttribute("src", filename)
+		    }
+		    else if (filetype=="css"){ //if filename is an external CSS file
+		        var fileref=document.createElement("link")
+		        fileref.setAttribute("rel", "stylesheet")
+		        fileref.setAttribute("type", "text/css")
+		        fileref.setAttribute("href", filename)
+		    }
+		    if (typeof fileref!="undefined")
+		        document.getElementsByTagName("head")[0].appendChild(fileref)
+		};
 
         this.onDocumentReady = function(){
 

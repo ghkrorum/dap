@@ -3,7 +3,7 @@
  * http://wordpress.org/plugins/ajax-load-more/
  * https://connekthq.com/plugins/ajax-load-more/
  *
- * Copyright 2016 Connekt Media - https://connekthq.com
+ * Copyright 2017 Connekt Media - https://connekthq.com
  * Free to use under the GPLv2 license.
  * http://www.gnu.org/licenses/gpl-2.0.html
  *
@@ -394,6 +394,9 @@
       alm.post_type = alm.content.attr('data-post-type');
       alm.post_type = alm.post_type.split(",");
       
+      /* Sticky Posts */
+      alm.sticky_posts = alm.content.attr('data-sticky-posts');
+      
 
       /* Append 'load More' button to .ajax-load-more-wrap */
       alm.container.append('<div class="' + alm.prefix + 'btn-wrap"/>');
@@ -530,7 +533,7 @@
                   offset            : alm.offset,
    	            slug              : alm.slug,
    	            canonical_url     : alm.canonical_url,
-                  post_type         : alm.post_type,                  
+                  post_type         : alm.post_type,              
                   post_format       : alm.content.attr('data-post-format'),
                   category          : alm.content.attr('data-category'),
                   category__not_in  : alm.content.attr('data-category-not-in'),
@@ -619,6 +622,7 @@
                   cta            		: alm.cta_array,
                   comments             : alm.comments_array,
                   post_type            : alm.post_type,
+                  sticky_posts         : alm.sticky_posts,     
                   post_format          : alm.content.attr('data-post-format'),
                   category             : alm.content.attr('data-category'),
                   category__not_in     : alm.content.attr('data-category-not-in'),

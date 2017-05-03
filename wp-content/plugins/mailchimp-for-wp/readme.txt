@@ -3,8 +3,8 @@ Contributors: Ibericode, DvanKooten, hchouhan, lapzor
 Donate link: https://mc4wp.com/#utm_source=wp-plugin-repo&utm_medium=mailchimp-for-wp&utm_campaign=donate-link
 Tags: mailchimp, mc4wp, email, marketing, newsletter, subscribe, widget, mc4wp, contact form 7, woocommerce, buddypress, ibericode, mailchimp forms, mailchimp integrations
 Requires at least: 4.1
-Tested up to: 4.7.2
-Stable tag: 4.0.13
+Tested up to: 4.7.4
+Stable tag: 4.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,7 +31,7 @@ MailChimp for WordPress helps you add more subscribers to your MailChimp lists u
 	- Default WordPress Registration Form
 	- Contact Form 7
 	- WooCommerce
-	- Ninja Forms
+	- Ninja Forms 3
 	- BuddyPress
     - MemberPress
 	- Events Manager
@@ -184,14 +184,42 @@ MailChimp for WordPress comes with many filter & action hooks which allow you to
 
 == Screenshots ==
 
-1. A static sign-up form in the sidebar of the Twenty Fifteen theme.
-2. Highly effective 1-click subscribe option in your comment, registration or other forms.
-3. Use your own fields or use our Field Builder.
-4. Integrations for many popular plugins.
-5. Don't know CSS? No worries, our Styles Builder will do the heavy lifting for you! **(Pro Feature)**
-6. Detailed statistics on which methods are generating the most subscribers. **(Pro Feature)**
+1. Create beautiful sign-up forms that blend in with your theme.
+2. Integrate with any other plugin out there.
+3. Add a highly converting top bar form to your site.
+4. Style your form with our Styles Builder (premium feature).
+5. Integrate your WooCommerce store with MailChimp (premium feature).
+6. Dive into detailed sign-up statistics (premium feature).
 
 == Changelog == 
+
+
+#### 4.1.1 - April 11, 2017
+
+**Fixes**
+
+- WPML String Translation not working with the checkbox label for sign-up integrations.
+
+**Improvements**
+
+- Use updated order methods when using WooCommerce 3.0, thanks to Liam McArthur.
+- Updated JavaScript dependencies.
+
+
+#### 4.1.0 - March 14, 2017
+
+**Improvements**
+
+- Updated all JavaScript dependencies in the plugin.
+- Failsafed filter hooks to prevent invalid variable types.
+- Explain that greyed out integrations means that specific plugin is not activated.
+- Conditional form elements now uses event delegation, so it works with forms in [Boxzilla pop-ups](https://boxzillaplugin.com/).
+- Updated language files.
+
+**Additions**
+
+- Added support for Ninja Forms 3.
+- Added `mc4wp_integration_show_checkbox` filter.
 
 
 #### 4.0.13 - February 8, 2017

@@ -1,4 +1,5 @@
 <?php
+
 define("THEME_URL", get_stylesheet_directory_uri());
 define("CATEGORY_EXPLAINERS", 21);
 
@@ -8,11 +9,25 @@ define("CATEGORY_EXPLAINERS", 21);
 function digitall_post_scripts() {
 
 		/* CSS */
-    wp_enqueue_style( 'digitall-post.vendor', THEME_URL . '/styles/vendor.css' );
-		wp_enqueue_style( 'digitall-post.fonts', 'https://fonts.googleapis.com/css?family=Oswald:300,400,700|Roboto:300,300i,400,400i,700,700i,900' );
-    wp_enqueue_style( 'digitall-post.main', THEME_URL . '/styles/main.css' );
+    // wp_enqueue_style( 'digitall-post.vendor', THEME_URL . '/styles/vendor.css' );
 
-    wp_enqueue_style( 'digitall-theme-style', THEME_URL . '/css/styles.css' );
+	wp_enqueue_style( 'digitall-post.fonts', 'https://fonts.googleapis.com/css?family=Oswald:300,400,700|Roboto:300,300i,400,400i,700,700i,900' );
+
+    // wp_enqueue_style( 'digitall-post.main', THEME_URL . '/styles/main.css' );
+
+    // wp_enqueue_style( 'digitall-theme-style', THEME_URL . '/css/styles.css' );
+
+    /*wp_dequeue_style('ajax-load-more');
+    wp_deregister_style('ajax-load-more');
+
+    wp_dequeue_style('contact-form-7');
+    wp_deregister_style('contact-form-7');
+
+    wp_dequeue_style('ssbp_styles');
+    wp_deregister_style('ssbp_styles');*/
+
+    
+    
 		
 		/* End CSS */
 
@@ -38,6 +53,20 @@ function digitall_post_scripts() {
 
 }
 add_action( 'wp_enqueue_scripts', 'digitall_post_scripts' );
+
+function digitall_custom_styles(){
+    $vendorCss = file_get_contents( THEME_URL . '/styles/vendor.css');
+    $mainCss = file_get_contents( THEME_URL . '/styles/main.css');
+    $stylesCss = file_get_contents( THEME_URL . '/css/styles.css');
+?>
+    <style>
+    <?= $vendorCss; ?>
+    <?= $mainCss; ?>
+    <?= $stylesCss; ?>
+    </style>
+<?php
+}
+add_action('wp_head', 'digitall_custom_styles', 100);
 
 function digitall_post_theme_setup() {
     add_theme_support( 'post-thumbnails' );
@@ -492,6 +521,19 @@ function displayInBoardTag(){
     }
     return false;
 }
+
+function digitall_custom_footer_html() {
+
+
+/*
+<div class="async-load" data-src="https://fonts.googleapis.com/css?family=Oswald:300,400,700|Roboto:300,300i,400,400i,700,700i,900" data-type="css"></div>
+<div class="async-load" data-src="<?= ALM_URL. '/core/css/ajax-load-more.min.css'; ?>" data-type="css"></div>
+<div class="async-load" data-src="<?= home_url(); ?>/wp-content/plugins/contact-form-7/includes/css/styles.css" data-type="css"></div>
+<div class="async-load" data-src="<?= home_url(); ?>/wp-content/plugins/simple-share-buttons-plus/ssbp.min.css" data-type="css"></div>
+*/
+
+}
+add_action( 'wp_footer', 'digitall_custom_footer_html' );
 
 function dfpScript() {
 ?>
