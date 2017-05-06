@@ -858,6 +858,9 @@ SyncDebug::log(__METHOD__."() wp_generate_attachment_metadata({$attach_id}, '{$f
 				if ($featured && 0 !== $target_post_id) {
 SyncDebug::log(__METHOD__."() set_post_thumbnail({$target_post_id}, {$attach_id})");
 					set_post_thumbnail($target_post_id, $attach_id /*intval($file)*/);
+					SyncDebug::log(__METHOD__."() update_post_meta({$target_post_id}, '_thumbnail_id', {$attach_id})");
+					update_post_meta( $target_post_id, '_thumbnail_id', $attach_id ); // Make sure setting post thumbnail
+					
 				}
 			}
 		}
@@ -865,8 +868,8 @@ SyncDebug::log(__METHOD__."() set_post_thumbnail({$target_post_id}, {$attach_id}
 		if (!$has_error) {
 SyncDebug::log(__METHOD__.'() image successfully handled');
 			// Set this post as featured image, if specified.
-			// if ($this->post('featured', 0))
-			// 	set_post_thumbnail($target_post_id /*$this->post('post_id')*/, $this->media_id);
+			if ($this->post('featured', 0))
+				set_post_thumbnail($target_post_id /*$this->post('post_id')*/, $this->media_id);
 
 			$media_data = array(
 				'id' => $this->media_id,
