@@ -522,19 +522,6 @@ function displayInBoardTag(){
     return false;
 }
 
-function digitall_custom_footer_html() {
-
-
-/*
-<div class="async-load" data-src="https://fonts.googleapis.com/css?family=Oswald:300,400,700|Roboto:300,300i,400,400i,700,700i,900" data-type="css"></div>
-<div class="async-load" data-src="<?= ALM_URL. '/core/css/ajax-load-more.min.css'; ?>" data-type="css"></div>
-<div class="async-load" data-src="<?= home_url(); ?>/wp-content/plugins/contact-form-7/includes/css/styles.css" data-type="css"></div>
-<div class="async-load" data-src="<?= home_url(); ?>/wp-content/plugins/simple-share-buttons-plus/ssbp.min.css" data-type="css"></div>
-*/
-
-}
-add_action( 'wp_footer', 'digitall_custom_footer_html' );
-
 function dfpScript() {
 ?>
 <script type="text/javascript">
