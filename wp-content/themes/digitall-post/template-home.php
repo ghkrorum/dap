@@ -101,7 +101,7 @@ $excludePostIdArray = array();
       </div>
       <?php endif; ?>
       
-
+      <!-- digitall_home_banner_1 -->
       <?php if ( is_active_sidebar( 'digitall_home_banner_1' ) ) : ?>
       <div class="wrapper_container banner-desktop">
         <div class="banner_holder"> 
@@ -109,6 +109,7 @@ $excludePostIdArray = array();
         </div>
       </div>
       <?php endif; ?>
+      <!-- /digitall_home_banner_1 -->
       
 
 
@@ -135,7 +136,8 @@ $excludePostIdArray = array();
       </section>
       <!-- /CATEGORY LATEST -->
       <?php endif; ?>
-
+      
+      <!-- digitall_home_banner_2 -->
       <?php if ( is_active_sidebar( 'digitall_home_banner_2' ) ) : ?>
       <div class="wrapper_container banner-desktop">
         <div class="banner_holder"> 
@@ -143,6 +145,7 @@ $excludePostIdArray = array();
         </div>
       </div>
       <?php endif; ?>
+      <!-- /digitall_home_banner_2 -->
 
       <?php 
       if ( have_rows('section_2_block') ) :
@@ -156,7 +159,8 @@ $excludePostIdArray = array();
         endwhile;
       endif;
       ?>
-
+      
+      <!-- digitall_home_banner_3 -->
       <?php if ( is_active_sidebar( 'digitall_home_banner_3' ) ) : ?>
       <div class="wrapper_container banner-desktop">
         <div class="banner_holder"> 
@@ -164,7 +168,7 @@ $excludePostIdArray = array();
         </div>
       </div>
       <?php endif; ?>
-
+      <!-- /digitall_home_banner_3 -->
 
       <?php
       $headlines = get_field('headlines');
@@ -225,7 +229,8 @@ $excludePostIdArray = array();
         wp_reset_postdata();
       endif;
       ?>
-
+      
+      <!-- digitall_home_banner_4 -->
       <?php if ( is_active_sidebar( 'digitall_home_banner_4' ) ) : ?>
       <div class="wrapper_container banner-desktop">
         <div class="banner_holder"> 
@@ -233,6 +238,7 @@ $excludePostIdArray = array();
         </div>
       </div>
       <?php endif; ?>
+      <!-- /digitall_home_banner_4 -->
 
       <?php
       $posts = get_field('section_4_entries');
@@ -290,7 +296,7 @@ $excludePostIdArray = array();
       <?php 
       endif;
       ?>
-
+      <!-- digitall_home_banner_5 -->
       <?php if ( is_active_sidebar( 'digitall_home_banner_5' ) ) : ?>
       <div class="wrapper_container banner-desktop">
         <div class="banner_holder"> 
@@ -298,6 +304,7 @@ $excludePostIdArray = array();
         </div>
       </div>
       <?php endif; ?>
+      <!-- /digitall_home_banner_5 -->
       
       <?php 
       $posts = get_field('section_5_entries');

@@ -244,6 +244,7 @@ var main; // Declare main variable in global scope
 			This.initFluidVids();
 
 			$.fn.almComplete = function(alm){
+				$('.adunit:not(".display-block")').dfp({dfpID:'158800740', enableSingleRequest: false });
 				This.initFluidVids();
 			};
 

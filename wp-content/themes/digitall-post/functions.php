@@ -541,6 +541,12 @@ function dfpScript() {
     jQuery('.adunit').dfp({
         dfpID: '158800740',
         sizeMapping: {
+            'desktop-970x250' : [
+                {browser: [1024, 0], ad_sizes: [ [970, 250] ]}
+            ],
+            'desktop-970x90' : [
+                {browser: [1024, 0], ad_sizes: [ [970, 90] ]}
+            ],
             'desktop': [
                 {browser: [1024, 0], ad_sizes: [[970, 250], [728, 90]]},
                 {browser: [   0,   0], ad_sizes: []}
@@ -571,9 +577,5 @@ if( function_exists('acf_add_options_page') ) {
 
 require get_parent_theme_file_path( '/inc/kxn-sync.php' );
 
-
-
-    
-    
-
-
+// Advanced Custom Fields Config
+include_once "acf-config.php";
