@@ -24,18 +24,27 @@
     <div id="mobile_menu">
 
       <!-- NAVIGATION -->
-      <?php wp_nav_menu( array( 
-              'theme_location' => 'digitall_post_mobile_menu',
-        'container' => '',
-        'menu_class' => 'menu',
-        'walker' => new Digitall_Post_Walker_Main_Mobile_Menu()
-      )); ?>
+      <?php 
+      $locations = get_nav_menu_locations();
+      if ( isset($locations['digitall_post_mobile_menu']) ) {
+        wp_nav_menu( array( 
+                'theme_location' => 'digitall_post_mobile_menu',
+          'container' => '',
+          'menu_class' => 'menu',
+          'walker' => new Digitall_Post_Walker_Main_Mobile_Menu()
+        )); 
+      }
+      ?>
 
-      <?php wp_nav_menu( array( 
-              'theme_location' => 'digitall_post_mobile_headline_menu',
-        'container' => '',
-        'menu_class' => 'headliners'
-      )); ?>
+      <?php 
+      if ( isset($locations['digitall_post_mobile_headline_menu']) ) {
+        wp_nav_menu( array( 
+                'theme_location' => 'digitall_post_mobile_headline_menu',
+          'container' => '',
+          'menu_class' => 'headliners'
+        )); 
+      }
+      ?>
 
       <!-- <ul class="headliners">
         <li>

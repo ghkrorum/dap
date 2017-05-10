@@ -5,10 +5,15 @@
             
 
             <!-- MENU -->
-            <?php wp_nav_menu( array( 
-              'theme_location' => 'digitall_post_footer_menu',
-              'menu_class' => 'menu'
-            )); ?>
+            <?php 
+            $locations = get_nav_menu_locations();
+            if ( isset($locations['digitall_post_footer_menu']) ) {
+              wp_nav_menu( array( 
+                'theme_location' => 'digitall_post_footer_menu',
+                'menu_class' => 'menu'
+              )); 
+            }
+            ?>
             <!-- /MENU -->
           </div>
         </div>

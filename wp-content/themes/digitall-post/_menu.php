@@ -58,11 +58,16 @@
             <a class="searchWindowOpen_btn">Buscar</a>
             
 
-            <?php wp_nav_menu( array( 
-              'theme_location' => 'digitall_post_menu',
-              'container' => 'nav',
-              'walker' => new Digitall_Post_Walker_Main_Nav_Menu()
-            )); ?>
+            <?php 
+            $locations = get_nav_menu_locations();
+            if ( isset( $locations['digitall_post_menu'] ) ) {
+              wp_nav_menu( array( 
+                'theme_location' => 'digitall_post_menu',
+                'container' => 'nav',
+                'walker' => new Digitall_Post_Walker_Main_Nav_Menu()
+              )); 
+            }
+            ?>
 
             <!-- NAVIGATION -->
             
