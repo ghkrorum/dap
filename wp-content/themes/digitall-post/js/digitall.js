@@ -24,6 +24,10 @@ var main; // Declare main variable in global scope
 			This.evalAsyncLoad();
 
 			setInterval(This.scrollMonitor, 10);
+
+			$.fn.almComplete = function(alm){
+				$('.adunit:not(".display-block")').dfp({dfpID:'158800740', enableSingleRequest: false });
+			};
         };
 
         this.evalAsyncLoad = function(){

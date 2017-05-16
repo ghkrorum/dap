@@ -9,13 +9,13 @@ define("CATEGORY_EXPLAINERS", 21);
 function digitall_post_scripts() {
 
 		/* CSS */
-    // wp_enqueue_style( 'digitall-post.vendor', THEME_URL . '/styles/vendor.css' );
+ //    wp_enqueue_style( 'digitall-post.vendor', THEME_URL . '/styles/vendor.css' );
 
 	wp_enqueue_style( 'digitall-post.fonts', 'https://fonts.googleapis.com/css?family=Oswald:300,400,700|Roboto:300,300i,400,400i,700,700i,900' );
 
-    // wp_enqueue_style( 'digitall-post.main', THEME_URL . '/styles/main.css' );
+ //    wp_enqueue_style( 'digitall-post.main', THEME_URL . '/styles/main.css' );
 
-    // wp_enqueue_style( 'digitall-theme-style', THEME_URL . '/css/styles.css' );
+ //    wp_enqueue_style( 'digitall-theme-style', THEME_URL . '/css/styles.css' );
 
     /*wp_dequeue_style('ajax-load-more');
     wp_deregister_style('ajax-load-more');
@@ -565,4 +565,4 @@ if( function_exists('acf_add_options_page') ) {
 require get_parent_theme_file_path( '/inc/kxn-sync.php' );
 
 // Advanced Custom Fields Config
-include_once "acf-config.php";
+// include_once "acf-config.php";
